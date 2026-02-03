@@ -9,7 +9,7 @@ on:
 
 jobs:
   ai-tests:
-    uses: Tejas4560/Tech_Demo/.github/workflows/ai-test-pipeline.yml@TEST6
+    uses: Tejas4560/Tech_Demo/.github/workflows/ai-test-pipeline.yml@TEST7
     permissions:
       contents: write
       pages: write
