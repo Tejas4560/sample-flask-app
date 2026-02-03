@@ -2,19 +2,24 @@ name: AI Test Generation
 
 on:
   push:
-    branches: [ main, master, develop ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
+  workflow_dispatch:
 
 jobs:
-  ai-testgen:
-    uses: Tejas4560/Tech_Demo/.github/workflows/ai-test-pipeline.yml@TEST2
+  ai-tests:
+    uses: Tejas4560/Tech_Demo/.github/workflows/ai-test-pipeline.yml@TEST6
+    permissions:
+      contents: write
+      pages: write
+      pull-requests: write
+      id-token: write
     with:
-      repo_url: ${{ github.event.repository.clone_url }}
-      repo_branch: ${{ github.ref_name }}
       min_coverage: 80
+      delta_threshold: '0'
+      deploy_pages: 'true'
     secrets:
-      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
-      SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+      AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
