@@ -1,0 +1,15 @@
+{
+  "file_map": {
+    "test_e2e_20260207_221142_01.py": "test_misc.py",
+    "test_integ_20260207_221142_01.py": "test_app.py"
+  },
+  "source_stems": [
+    "app",
+    "misc"
+  ],
+  "stats": {
+    "input_files": 2,
+    "output_files": 2,
+    "removed": 2
+  }
+}
